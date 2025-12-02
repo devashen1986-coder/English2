@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文法測驗 Test4</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>文法測驗 Test4</h1>
+  <p>在此新增你的文法測驗內容。</p>
+  <section class="content">
+    <h2>文法測驗 Grammar Test</h2>
+
+    <div class="question">
+      <p>1. She ___ to the gym every day.</p>
+      <label><input type="radio" name="q1" value="a"> go</label><br>
+      <label><input type="radio" name="q1" value="b"> goes</label><br>
+      <label><input type="radio" name="q1" value="c"> going</label>
+    </div>
+
+    <div class="question">
+      <p>2. If I ___ enough time, I will finish the report.</p>
+      <label><input type="radio" name="q2" value="a"> have</label><br>
+      <label><input type="radio" name="q2" value="b"> had</label><br>
+      <label><input type="radio" name="q2" value="c"> will have</label>
+    </div>
+
+    <button onclick="checkAnswers()">提交 Submit</button>
+    <p id="result"></p>
+  </section>
+
+  <script>
+    function checkAnswers() {
+      let score = 0;
+
+      const answers = {
+        q1: "b",
+        q2: "a"
+      };
+
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) score++;
+      }
+
+      document.getElementById("result").textContent = `你的得分 Your Score: ${score}/2`;
+    }
+  </script>
+
+</body>
+</html>

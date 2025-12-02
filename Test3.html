@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>文法測驗</title>
+<style>
+ body { font-family: Arial; margin: 0; }
+ nav { background: #003366; padding: 15px; }
+ nav a { color: white; margin-right: 20px; text-decoration: none; font-weight: bold; }
+ .container { padding: 20px; }
+ button { margin-top: 10px; }
+</style>
+</head>
+<body>
+<nav>
+ <a href="index.html">首頁</a>
+ <a href="test1.html">字彙測驗</a>
+ <a href="test2.html">閱讀測驗</a>
+ <a href="test3.html">文法測驗</a>
+ <a href="about.html">製作團隊</a>
+</nav>
+<div class="container">
+ <h2>文法測驗</h2>
+ <p>1. If I ______ enough money, I would travel abroad.</p>
+ <input type="radio" name="q1" value="A"> A. have<br>
+ <input type="radio" name="q1" value="B"> B. had<br>
+ <input type="radio" name="q1" value="C"> C. will have<br>
+ <button onclick="checkAnswer3()">提交答案</button>
+ <p id="result3"></p>
+</div>
+<script>
+function checkAnswer3() {
+ let answer = document.querySelector('input[name="q1"]:checked');
+ if (!answer) {
+   document.getElementById('result3').innerText = "請選擇答案";
+   return;
+ }
+ if (answer.value === "B") {
+   document.getElementById('result3').innerText = "✔ 正確！";
+ } else {
+   document.getElementById('result3').innerText = "✘ 錯誤，再試試看！";
+ }
+}
+</script>
+</body>
+</html>
